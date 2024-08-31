@@ -3,5 +3,5 @@ from .views import StoreList, StoreDetail
 
 urlpatterns = [
     path('render/',StoreList.as_view(), name="store_list"),
-    path('<int:pk>/', StoreDetail.as_view(), name="store_detail" ),
+    path('render/<int:pk>/', StoreDetail.as_view(), name="store_detail" ),
 ]
