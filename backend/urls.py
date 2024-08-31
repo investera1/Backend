@@ -9,7 +9,6 @@ urlpatterns = [
     path('store/',include('store.urls')),
     path('product/',include('product.urls')),
     path('idea/',include('idea.urls')),
-
     path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),  # Use custom view
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
