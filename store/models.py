@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 
 class Store(models.Model):
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="stores")
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     logo = models.ImageField(upload_to='store_logos/', blank=True, null=True)
     description = models.TextField(blank=True, null=True)
