@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+# from django.contrib.contenttypes.fields import GenericRelation
+# from .models import Like
 
 class Store(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -8,6 +10,9 @@ class Store(models.Model):
     description = models.TextField(blank=True, null=True)
     social_links = models.JSONField(default=dict, blank=True, null=True)  
     views = models.PositiveIntegerField(default=0)
-
+    # likes = GenericRelation(Like)
     def __str__(self):
+        # store = Store.objects.get(id=1)
+        # store_likes = store.likes.all()
+        # print(store_likes)
         return self.name

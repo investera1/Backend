@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'store',
     'product',
     'idea',
+    'like',
 ]
 
 MIDDLEWARE = [
