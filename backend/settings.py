@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'product',
     'idea',
     'like',
+    'report',
 ]
 
 MIDDLEWARE = [
