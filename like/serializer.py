@@ -1,0 +1,29 @@
+from rest_framework import serializers
+from .models import Like
+
+# Absolute imports from the relevant apps
+from store.serializer import StoreSerializer
+from product.serializers import ProductSerializer
+from idea.serializer import IdeaSerializer
+
+from store.models import Store
+from idea.models import Idea
+from product.models import Product
+
+
+class LikeSerializer(serializers.ModelSerializer):
+    content_object = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Like
+        fields = ['id', 'user', 'content_type', 'object_id', 'created_at', 'content_object']
+
+    def get_content_object(self, obj):
+        # Dynamically determine the serializer based on the content_object type
+        if isinstance(obj.content_object, Store):
+            return StoreSerializer(obj.content_object).data
+        elif isinstance(obj.content_object, Product):
+            return ProductSerializer(obj.content_object).data
+        elif isinstance(obj.content_object, Idea):
+            return IdeaSerializer(obj.content_object).data
+        return None  # In case the content_object is of an unsupported type

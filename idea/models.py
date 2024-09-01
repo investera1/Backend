@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+# from django.contrib.contenttypes.fields import GenericRelation
+# from .models import Like
 
 class Idea(models.Model):
     CATEGORY_CHOICES = [
@@ -9,6 +11,7 @@ class Idea(models.Model):
         ('HEALTH', 'Healthcare'),
         ('AGR', 'Agriculture'),
     ]
+    # likes = GenericRelation(Like)
     
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="ideas")
     name = models.CharField(max_length=255)

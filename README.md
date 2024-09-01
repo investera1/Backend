@@ -410,3 +410,110 @@
   "message": "Report deleted successfully"
 }
 ```
+---
+## Like App API Routes
+
+### 1. List All Likes
+
+- **URL**: `like/`
+- **Method**: `GET`
+- **Description**: Retrieves a list of all likes.
+- **Response**:
+
+```json
+[
+    {
+        "id": "<like_id>",
+        "user": "<user_id>",
+        "content_type": "string",
+        "object_id": "int",
+        "content_object": "Liked object",
+        "created_at": "datetime"
+    },
+    ...
+]
+```
+
+### 2. Create a Like
+
+- **URL**: `like/`
+- **Method**: `POST`
+- **Description**: Creates a new like.
+- **Request Body**:
+
+```json
+{
+    "user": "<user_id>",
+    "content_type": "<content_type_id>",
+    "object_id": "int"
+}
+```
+
+### 3. Retrieve a Specific Like
+
+- **URL**: `like/<int:pk>/`
+- **Method**: `GET`
+- **Description**: Retrieves the details of a specific like.
+- **Response**:
+
+```json
+{
+    "id": "<like_id>",
+    "user": "<user_id>",
+    "content_type": "string",
+    "object_id": "int",
+    "content_object": "Liked object",
+    "created_at": "datetime"
+}
+```
+
+### 4. Update a Like
+
+- **URL**: `like/<int:pk>/`
+- **Method**: `PUT`
+- **Description**: Updates an existing like.
+- **Request Body**:
+
+```json
+{
+    "user": "<user_id>",
+    "content_type": "<content_type_id>",
+    "object_id": "int"
+}
+```
+
+### 5. Delete a Like
+
+- **URL**: `like/<int:pk>/`
+- **Method**: `DELETE`
+- **Description**: Deletes a specific like.
+- **Response**:
+
+```json
+{
+    "message": "Like deleted successfully"
+}
+```
+
+### 6. Retrieve Likes for the Authenticated User
+
+- **URL**: `like/userLikes/`
+- **Method**: `GET`
+- **Description**: Retrieves all likes that belong to the authenticated user.
+- **Response**:
+
+```json
+[
+    {
+        "id": "<like_id>",
+        "user": "<user_id>",
+        "content_type": "string",
+        "object_id": "int",
+        "content_object": "Lked object",
+        "created_at": "datetime"
+    },
+    ...
+]
+```
+
+---
