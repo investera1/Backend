@@ -15,14 +15,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Store',
+            name='Report',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('logo', models.ImageField(blank=True, null=True, upload_to='store_logos/')),
-                ('description', models.TextField(blank=True, null=True)),
-                ('social_links', models.JSONField(blank=True, default=dict, null=True)),
-                ('views', models.PositiveIntegerField(default=0)),
+                ('description', models.TextField()),
+                ('funding_required', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('location', models.CharField(max_length=255)),
                 ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
