@@ -10,5 +10,5 @@ class IdeaList(generics.ListCreateAPIView):
 class IdeaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Idea.objects.all()
     serializer_class = IdeaSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]
     
