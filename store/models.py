@@ -12,7 +12,4 @@ class Store(models.Model):
     views = models.PositiveIntegerField(default=0)
     # likes = GenericRelation(Like)
     def __str__(self):
-        # store = Store.objects.get(id=1)
-        # store_likes = store.likes.all()
-        # print(store_likes)
         return self.name
