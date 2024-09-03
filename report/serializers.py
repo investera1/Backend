@@ -4,4 +4,4 @@ from .models import Report
 class ReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = Report
-        fields = ['id', 'owner', 'description', 'funding_required', 'location']
+        fields = '__all__'
