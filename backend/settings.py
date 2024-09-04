@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'idea',
     'like',
     'report',
+    'cart',
 ]
 
 MIDDLEWARE = [
