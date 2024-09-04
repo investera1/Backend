@@ -5,21 +5,18 @@ from product.models import Product
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'name', 'price', 'product_image', 'description', 'store']
+        fields = '__all__'
 
 class CartSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)  # Use a nested serializer
+    # Use ProductSerializer for read operations, PrimaryKeyRelatedField for writes
+    product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all())
 
     class Meta:
         model = Cart
-        fields = '__all__'  # Adjust fields as needed
+        fields = '__all__'
 
-    def create(self, validated_data):
-        # Extract product ID or reference
-        product_data = validated_data.pop('product')
-        product = Product.objects.get(id=product_data['id'])
-
-        # Create the cart entry
-        cart = Cart.objects.create(product=product, **validated_data)
-        
-        return cart
+    def to_representation(self, instance):
+        # Override the output to use the nested ProductSerializer for the product field
+        response = super().to_representation(instance)
+        response['product'] = ProductSerializer(instance.product).data
+        return response
