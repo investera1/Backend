@@ -40,20 +40,21 @@ AUTH_USER_MODEL = "account.CustomUser"
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "corsheaders",
-    "rest_framework",
-    "account",
-    "store",
-    "product",
-    "idea",
-    "like",
-    "report",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'account',
+    'store',
+    'product',
+    'idea',
+    'like',
+    'report',
+    'cart',
 ]
 
 MIDDLEWARE = [
