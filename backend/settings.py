@@ -142,6 +142,10 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# Define the directory where collectstatic will collect static files for production
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" if not DEBUG else "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
