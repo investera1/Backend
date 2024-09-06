@@ -15,6 +15,8 @@ urlpatterns = [
     path('idea/',include('idea.urls')),
     path('like/',include('like.urls')),
     path('reports/',include('report.urls')),
+    path('cart/',include('cart.urls')),
+
     
     path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),  # Use custom view
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
