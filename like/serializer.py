@@ -5,7 +5,7 @@ from .models import Like
 from store.serializer import StoreSerializer
 from product.serializers import ProductSerializer
 from idea.serializer import IdeaSerializer
-from report.serializer import ReportSerializer
+from report.serializers import ReportSerializer
 
 from store.models import Store
 from idea.models import Idea
