@@ -3,6 +3,7 @@ certifi==2024.8.30
 charset-normalizer==3.3.2
 colorama==0.4.6
 cors==1.0.1
+dj-database-url==2.2.0
 Django==4.2.15
 django-cors-headers==4.4.0
 django-environ==0.11.2
@@ -16,6 +17,7 @@ gunicorn==23.0.0
 idna==3.8
 packaging==24.1
 pillow==10.4.0
+psycopg2-binary==2.9.9
 PyJWT==2.9.0
 PySocks==1.7.1
 python-dotenv==1.0.1
